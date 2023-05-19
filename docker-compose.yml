@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  goprod:
+    image: kcardamone/goprod
+    command: ./hello-world
+    build:
+      context: go
+    container_name: go-alpine
+    ports:
+      - "3000:3000"
+
+  goscratch:
+    image: kcardamone/fullcycle
+    command: ./hello-world
+    build:
+      context: go
+    container_name: go-scratch
+    ports:
+      - "8080:8080"
